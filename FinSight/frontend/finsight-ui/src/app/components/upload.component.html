@@ -1,0 +1,9 @@
+<div class="p-4">
+    <h2 class="text-xl font-bold mb-4">📄 Upload Bank Statement</h2>
+    <input type="file" (change)="onFileSelected($event)" class="mb-4" />
+    <div *ngIf="summary">
+      <h3 class="font-semibold text-lg mt-4">🧠 AI Summary:</h3>
+      <p class="bg-gray-100 p-3 rounded mt-2 whitespace-pre-line">{{ summary }}</p>
+    </div>
+  </div>
+  
