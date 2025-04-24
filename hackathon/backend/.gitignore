@@ -1,0 +1,44 @@
+# 🐍 Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.env
+.venv/
+venv/
+env/
+*.log
+
+# 📦 Virtual Environment (if using system venv)
+.venv/
+env/
+venv/
+
+# 🔐 Environment Files
+.env
+firebase_service_account.json
+
+# 🧪 Testing + Artifacts
+*.sqlite3
+*.db
+.DS_Store
+coverage/
+htmlcov/
+pytest_cache/
+.mypy_cache/
+.tox/
+build/
+dist/
+
+# 🔍 VSCode and IDEs
+.vscode/
+.idea/
+*.swp
+
+# 💨 Uvicorn logs (if redirected)
+*.log
+
+# 📂 Output files
+*.pdf
+*.csv
+*.xlsx
