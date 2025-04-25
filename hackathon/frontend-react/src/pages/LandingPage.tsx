@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { FaMoneyBillWave, FaChartPie, FaRobot } from "react-icons/fa";
+import Hero3D from "../components/Hero3D";
 
 export default function LandingPage() {
   return (
@@ -25,10 +26,11 @@ export default function LandingPage() {
         </div>
       </header>
 
-      {/* Hero */}
-      <section className="h-screen flex flex-col justify-center items-center text-center px-6 pt-20">
+      {/* Hero Section with 3D */}
+      <section className="relative h-screen flex flex-col justify-center items-center text-center px-6 pt-20 overflow-hidden">
+        <Hero3D />
         <motion.h2
-          className="text-5xl md:text-6xl font-bold text-cyan-400 mb-6"
+          className="text-5xl md:text-6xl font-bold text-cyan-400 mb-6 z-10"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
@@ -36,7 +38,7 @@ export default function LandingPage() {
           Smarter Money Tracking
         </motion.h2>
         <motion.p
-          className="text-lg md:text-xl text-gray-300 max-w-2xl"
+          className="text-lg md:text-xl text-gray-300 max-w-2xl z-10"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 1 }}
