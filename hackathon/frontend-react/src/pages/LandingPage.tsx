@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
-import { FaMoneyBillWave, FaChartPie, FaRobot } from "react-icons/fa";
-import Hero3D from "../components/Hero3D";
+import { FaMoneyBillWave, FaChartPie } from "react-icons/fa";
+import SceneLayout from "../components/SceneLayout";
+import AIHighlightCard from "../components/AIHighlightCard";
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-gray-900 text-white font-sans">
+    <SceneLayout>
       {/* Navbar */}
       <header className="fixed top-0 left-0 w-full z-50 bg-gray-900 shadow-md">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -26,9 +27,8 @@ export default function LandingPage() {
         </div>
       </header>
 
-      {/* Hero Section with 3D */}
-      <section className="relative h-screen flex flex-col justify-center items-center text-center px-6 pt-20 overflow-hidden">
-        <Hero3D />
+      {/* Hero Section */}
+      <section className="h-screen flex flex-col justify-center items-center text-center px-6 pt-20">
         <motion.h2
           className="text-5xl md:text-6xl font-bold text-cyan-400 mb-6 z-10"
           initial={{ opacity: 0, y: 40 }}
@@ -53,7 +53,7 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto text-center">
           <h3 className="text-3xl font-bold mb-10">Features</h3>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-10">
-            <div className="bg-gray-700 p-6 rounded-xl shadow-lg">
+            <div className="bg-gray-700 p-6 rounded-xl shadow-lg hover:shadow-xl transition">
               <FaMoneyBillWave className="text-cyan-400 text-4xl mx-auto mb-4" />
               <h4 className="text-xl font-semibold mb-2">
                 Manual & Smart Input
@@ -62,7 +62,7 @@ export default function LandingPage() {
                 Add transactions or upload statements — we do the rest.
               </p>
             </div>
-            <div className="bg-gray-700 p-6 rounded-xl shadow-lg">
+            <div className="bg-gray-700 p-6 rounded-xl shadow-lg hover:shadow-xl transition">
               <FaChartPie className="text-cyan-400 text-4xl mx-auto mb-4" />
               <h4 className="text-xl font-semibold mb-2">
                 Spending Visualization
@@ -71,13 +71,7 @@ export default function LandingPage() {
                 Track where your money goes with clean and intuitive charts.
               </p>
             </div>
-            <div className="bg-gray-700 p-6 rounded-xl shadow-lg">
-              <FaRobot className="text-cyan-400 text-4xl mx-auto mb-4" />
-              <h4 className="text-xl font-semibold mb-2">AI Chat Assistant</h4>
-              <p className="text-gray-300">
-                Ask anything about your finances and get intelligent answers.
-              </p>
-            </div>
+            <AIHighlightCard />
           </div>
         </div>
       </section>
@@ -109,7 +103,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Call to Action */}
+      {/* CTA */}
       <section
         id="cta"
         className="py-20 px-6 bg-gradient-to-br from-cyan-500 to-blue-600 text-black text-center"
@@ -129,6 +123,6 @@ export default function LandingPage() {
       <footer className="py-8 bg-gray-800 text-center text-gray-400 text-sm">
         © 2025 FinVision. Built for Google Hackathon 🚀
       </footer>
-    </div>
+    </SceneLayout>
   );
 }

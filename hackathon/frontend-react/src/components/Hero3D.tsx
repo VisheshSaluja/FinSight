@@ -1,29 +1,36 @@
 import { Canvas } from "@react-three/fiber";
 import {
-  OrbitControls,
   Float,
-  MeshDistortMaterial,
   Sphere,
+  MeshDistortMaterial,
+  Sparkles,
 } from "@react-three/drei";
 
 export default function Hero3D() {
   return (
-    <div className="w-full h-[300px] sm:h-[400px] md:h-[500px]">
+    <div className="absolute inset-0 z-0">
       <Canvas camera={{ position: [0, 0, 3] }}>
-        <ambientLight intensity={0.6} />
-        <directionalLight position={[3, 2, 1]} />
-        <Float speed={2} rotationIntensity={1.2} floatIntensity={2}>
-          <Sphere args={[1, 64, 64]}>
+        <ambientLight intensity={0.3} />
+        <directionalLight position={[2, 2, 2]} />
+        <Float speed={2} rotationIntensity={1.5} floatIntensity={2}>
+          <Sphere args={[1.4, 64, 64]}>
             <MeshDistortMaterial
-              color="#00FFFF"
-              attach="material"
-              distort={0.4}
+              color="#00e0ff"
+              distort={0.5}
               speed={2}
               roughness={0.1}
+              emissive="#00ffff"
+              emissiveIntensity={0.2}
             />
           </Sphere>
         </Float>
-        <OrbitControls enableZoom={false} autoRotate />
+        <Sparkles
+          count={40}
+          scale={[4, 4, 4]}
+          size={2}
+          speed={1}
+          color="#00e0ff"
+        />
       </Canvas>
     </div>
   );
